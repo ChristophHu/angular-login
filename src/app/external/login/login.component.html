@@ -1,0 +1,51 @@
+<!-- <app-splash-screen></app-splash-screen> -->
+<div class="h-screen w-screen grid place-items-center overflow-hidden bg-gray-100 z-0">
+    <div class="absolute w-full h-full grid place-items-center z-20">
+        <div class="w-96 p-10 bg-white rounded-lg shadow-lg z-20">
+            <!-- <h1 class="my-10 text-3xl text-gray-800">Bordbuch</h1> -->
+            <h1 class="my-10 text-3xl text-gray-800">Bordbuch</h1>
+            <form [formGroup]="loginForm" autocomplete="off">
+
+                <div class="w-full my-2">
+                    <label class="text-sm text-gray-800" id="firstName">E-Mail</label>
+                    <input type="name" formControlName="email" #email class="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800" placeholder="John" />
+                    <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" class="px-3 text-red-400 pt-1 pb-2 text-sm">Requirde</div>                  
+                    <div [class.hidden]="loginForm.get('email')?.valid" class="px-3 text-red-400 pt-1 pb-2 text-sm">valid</div>
+                    <div [class.hidden]="!loginForm.get('email')?.dirty" class="px-3 text-red-400 pt-1 pb-2 text-sm">dirty</div>
+                    <div [class.hidden]="!loginForm.get('email')?.touched" class="px-3 text-red-400 pt-1 pb-2 text-sm">touched</div>
+                </div>
+
+                <div class="w-full my-2">
+                    <label class="text-sm text-gray-800" id="firstName">Password</label>
+                    <input type="password" tabindex="0" class="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"/>
+                </div>
+
+                <div class="w-full py-4 sm:px-0 bg-white dark:bg-gray-800 flex justify-end">
+                    <button role="button" aria-label="cancel form" class="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 dark:bg-gray-700 rounded text-indigo-600 dark:text-indigo-600 px-6 py-2 text-xs mr-4 focus:ring-2 focus:ring-offset-2 focus:ring-gray-700">Sign Up</button>
+                    <button role="button" aria-label="Save form" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-2 text-sm" type="submit">Login</button>
+                </div>
+                <!-- <mat-form-field appearance="fill">
+                    <mat-label>Benutzername</mat-label>
+                    <input type="text" matInput formControlName="username">
+                    <mat-error *ngIf="loginForm.get('username')?.hasError('required')">Ein Benutzername ist erforderlich!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Kennwort</mat-label>
+                    <input type="password" matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <div class="absolute right-2 top-4 w-6 h-6" (click)="hide = !hide">
+                        <icons class="w-6 h-6 stroke-1 stroke-current" name="{{hide ? 'eye' : 'eye-off'}}"></icons>
+                    </div>
+                    <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Die Eingabe eines Kennworts ist erforderlich!</mat-error>
+                </mat-form-field>
+                
+                <div class="flex">
+                    <button class="w-full p-3 mt-3 bg-gray-800 text-white rounded-md shadow-lg" (click)="login()" (keyup.enter)="login()">Login</button>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div>
+<div class="absolute flex flex-row justify-end h-8 w-full bottom-0 z-30">
+    <!-- <div class="mr-3 text-sm cursor-pointer" (click)="openChangeLogModal()">Aktualisierung 10.03.2022</div> -->
+</div>
